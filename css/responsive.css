@@ -1,1 +1,1123 @@
- 
+/* ============================================
+   RAHUL PAL - PORTFOLIO WEBSITE
+   Responsive Styles & Media Queries
+   ============================================ */
+
+/* ============================================
+   TABLE OF CONTENTS
+   ============================================
+   1. Breakpoint Reference
+   2. Large Screens (1400px and below)
+   3. Desktop / Small Laptops (1200px and below)
+   4. Tablets Landscape (1024px and below)
+   5. Tablets Portrait (768px and below)
+   6. Large Phones (640px and below)
+   7. Small Phones (480px and below)
+   8. Extra Small Phones (375px and below)
+   9. Height-Based Queries
+   10. Print Styles
+   ============================================ */
+
+/* ============================================
+   1. BREAKPOINT REFERENCE
+   ============================================
+   
+   --bp-2xl: 1536px  (2XL screens)
+   --bp-xl:  1280px  (XL screens)
+   --bp-lg:  1024px  (Large tablets / laptops)
+   --bp-md:  768px   (Tablets portrait)
+   --bp-sm:  640px   (Large phones)
+   --bp-xs:  480px   (Small phones)
+   --bp-xxs: 375px   (Extra small phones)
+   
+   ============================================ */
+
+/* ============================================
+   2. LARGE SCREENS (1400px and below)
+   ============================================ */
+@media screen and (max-width: 1400px) {
+    :root {
+        --container-max: 1200px;
+    }
+    
+    .hero-blob-1 {
+        width: 500px;
+        height: 500px;
+        top: -150px;
+        right: -150px;
+    }
+    
+    .hero-blob-2 {
+        width: 400px;
+        height: 400px;
+        bottom: -100px;
+        left: -100px;
+    }
+}
+
+/* ============================================
+   3. DESKTOP / SMALL LAPTOPS (1200px and below)
+   ============================================ */
+@media screen and (max-width: 1200px) {
+    :root {
+        --container-max: 1000px;
+        --section-padding: clamp(3rem, 6vw, 6rem);
+    }
+    
+    /* About Section */
+    .about-grid {
+        gap: var(--space-10);
+    }
+    
+    .about-avatar {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .about-content {
+        padding-left: var(--space-4);
+    }
+    
+    /* Projects Section */
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: var(--space-6);
+    }
+    
+    /* Skills Section */
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    
+    /* Contact Section */
+    .contact-grid {
+        gap: var(--space-8);
+    }
+}
+
+/* ============================================
+   4. TABLETS LANDSCAPE (1024px and below)
+   ============================================ */
+@media screen and (max-width: 1024px) {
+    :root {
+        --navbar-height: 70px;
+    }
+    
+    /* ---- Navigation ---- */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        max-width: 400px;
+        height: 100vh;
+        height: 100dvh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--space-2);
+        padding: var(--space-8);
+        background: rgba(10, 10, 15, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-left: 1px solid var(--border-color);
+        transform: translateX(100%);
+        transition: transform 0.4s var(--ease-out-expo);
+        z-index: var(--z-fixed);
+    }
+    
+    .nav-links.active {
+        transform: translateX(0);
+    }
+    
+    .nav-link {
+        font-size: var(--text-lg);
+        padding: var(--space-3) var(--space-6);
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+    
+    .nav-link:hover,
+    .nav-link.active {
+        background: rgba(0, 212, 255, 0.1);
+        border-radius: var(--radius-lg);
+    }
+    
+    .nav-hamburger {
+        display: flex;
+    }
+    
+    .btn-resume {
+        display: none;
+    }
+    
+    /* Show resume button in mobile menu */
+    .nav-links .btn-resume-mobile {
+        display: flex;
+        margin-top: var(--space-4);
+    }
+    
+    /* ---- Hero Section ---- */
+    .hero-name {
+        font-size: var(--text-5xl);
+    }
+    
+    .hero-tagline {
+        font-size: var(--text-lg);
+    }
+    
+    .hero-blob-1 {
+        width: 400px;
+        height: 400px;
+        opacity: 0.3;
+    }
+    
+    .hero-blob-2 {
+        width: 350px;
+        height: 350px;
+        opacity: 0.3;
+    }
+    
+    /* ---- About Section ---- */
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .about-avatar-wrapper {
+        justify-content: center;
+        margin-bottom: var(--space-8);
+    }
+    
+    .about-content {
+        padding-left: 0;
+    }
+    
+    .about-subtitle {
+        text-align: center;
+    }
+    
+    .about-bio {
+        text-align: left;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .about-stats {
+        justify-content: center;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Floating Icons - Hide on tablet */
+    .floating-icons {
+        opacity: 0.5;
+    }
+    
+    /* ---- Projects Section ---- */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* ---- Timeline Section ---- */
+    .timeline {
+        max-width: 100%;
+    }
+    
+    .timeline-item {
+        gap: var(--space-6);
+    }
+    
+    /* ---- Contact Section ---- */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        padding-right: 0;
+        text-align: center;
+    }
+    
+    .contact-text {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .contact-details {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .contact-socials {
+        justify-content: center;
+    }
+    
+    .contact-form {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ============================================
+   5. TABLETS PORTRAIT (768px and below)
+   ============================================ */
+@media screen and (max-width: 768px) {
+    :root {
+        --section-padding: clamp(2.5rem, 5vw, 4rem);
+    }
+    
+    /* ---- General ---- */
+    .section-header {
+        margin-bottom: var(--space-10);
+    }
+    
+    .section-title {
+        font-size: var(--text-3xl);
+    }
+    
+    .section-description {
+        font-size: var(--text-base);
+    }
+    
+    /* ---- Hero Section ---- */
+    .hero {
+        min-height: calc(100vh - var(--navbar-height));
+        min-height: calc(100dvh - var(--navbar-height));
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .hero-badge {
+        justify-content: center;
+    }
+    
+    .hero-greeting {
+        font-size: var(--text-lg);
+    }
+    
+    .hero-name {
+        font-size: var(--text-4xl);
+    }
+    
+    .hero-tagline-wrapper {
+        min-height: 50px;
+    }
+    
+    .hero-tagline {
+        font-size: var(--text-base);
+        justify-content: center;
+    }
+    
+    .hero-description {
+        font-size: var(--text-base);
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    
+    .hero-cta {
+        justify-content: center;
+    }
+    
+    .hero-socials {
+        justify-content: center;
+    }
+    
+    .scroll-indicator {
+        display: none;
+    }
+    
+    /* ---- About Section ---- */
+    .about-avatar {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .about-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-3);
+    }
+    
+    .stat-card {
+        padding: var(--space-4);
+    }
+    
+    .stat-number {
+        font-size: var(--text-2xl);
+    }
+    
+    .stat-label {
+        font-size: var(--text-xs);
+    }
+    
+    /* ---- Projects Section ---- */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .project-image {
+        height: 180px;
+    }
+    
+    /* ---- Skills Section ---- */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .skill-category {
+        text-align: center;
+    }
+    
+    .skill-category-header {
+        justify-content: center;
+    }
+    
+    .skill-tags {
+        justify-content: center;
+    }
+    
+    /* ---- Timeline Section ---- */
+    .timeline-item {
+        gap: var(--space-4);
+    }
+    
+    .timeline-content {
+        padding: var(--space-5);
+    }
+    
+    .timeline-role {
+        font-size: var(--text-lg);
+    }
+    
+    .timeline-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-1);
+    }
+    
+    /* ---- Blog Section ---- */
+    .blog-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* ---- Footer ---- */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-6);
+    }
+    
+    .back-to-top {
+        position: fixed;
+        bottom: var(--space-6);
+        right: var(--space-6);
+        z-index: var(--z-sticky);
+    }
+}
+
+/* ============================================
+   6. LARGE PHONES (640px and below)
+   ============================================ */
+@media screen and (max-width: 640px) {
+    :root {
+        --navbar-height: 64px;
+    }
+    
+    /* ---- Navigation ---- */
+    .nav-links {
+        max-width: 100%;
+        border-left: none;
+    }
+    
+    .nav-logo {
+        font-size: var(--text-xl);
+    }
+    
+    /* ---- Hero Section ---- */
+    .hero-container {
+        padding: var(--space-6) var(--container-padding);
+    }
+    
+    .hero-badge {
+        padding: var(--space-2) var(--space-3);
+    }
+    
+    .badge-text {
+        font-size: var(--text-xs);
+    }
+    
+    .hero-name {
+        font-size: clamp(2.25rem, 8vw, 3rem);
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-cta .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .hero-socials {
+        gap: var(--space-3);
+    }
+    
+    .social-link {
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* ---- About Section ---- */
+    .about-avatar {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .stat-card {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: var(--space-4);
+        text-align: left;
+    }
+    
+    .stat-icon {
+        margin-bottom: 0;
+    }
+    
+    .stat-card > div:last-child {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* ---- Projects Section ---- */
+    .project-content {
+        padding: var(--space-5);
+    }
+    
+    .project-title {
+        font-size: var(--text-lg);
+    }
+    
+    .tech-tag {
+        font-size: 10px;
+        padding: var(--space-1) var(--space-2);
+    }
+    
+    /* ---- Timeline Section ---- */
+    .timeline-marker {
+        display: none;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        padding-bottom: var(--space-6);
+    }
+    
+    .timeline-content {
+        border-left: 3px solid var(--accent-blue);
+        border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+    }
+    
+    .timeline-content:hover {
+        transform: none;
+    }
+    
+    .timeline-description li {
+        font-size: var(--text-sm);
+    }
+    
+    /* ---- Blog Section ---- */
+    .blog-card {
+        padding: var(--space-5);
+    }
+    
+    .blog-title {
+        font-size: var(--text-lg);
+    }
+    
+    /* ---- Contact Section ---- */
+    .contact-form {
+        padding: var(--space-6);
+    }
+    
+    .contact-item {
+        padding: var(--space-3);
+    }
+    
+    .contact-value {
+        font-size: var(--text-xs);
+    }
+    
+    /* ---- Buttons ---- */
+    .btn {
+        padding: var(--space-3) var(--space-6);
+        font-size: var(--text-xs);
+    }
+    
+    .btn-submit {
+        padding: var(--space-4) var(--space-6);
+    }
+}
+
+/* ============================================
+   7. SMALL PHONES (480px and below)
+   ============================================ */
+@media screen and (max-width: 480px) {
+    :root {
+        --container-padding: 1rem;
+    }
+    
+    /* ---- Typography ---- */
+    .section-label {
+        font-size: var(--text-xs);
+        padding: var(--space-1) var(--space-3);
+    }
+    
+    .section-title {
+        font-size: var(--text-2xl);
+    }
+    
+    /* ---- Hero Section ---- */
+    .hero-greeting {
+        font-size: var(--text-base);
+    }
+    
+    .hero-name {
+        font-size: clamp(2rem, 10vw, 2.5rem);
+    }
+    
+    .hero-tagline {
+        font-size: var(--text-sm);
+    }
+    
+    .hero-description {
+        font-size: var(--text-sm);
+    }
+    
+    .hero-blob-1,
+    .hero-blob-2 {
+        display: none;
+    }
+    
+    /* ---- About Section ---- */
+    .about-avatar {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .avatar-placeholder span {
+        font-size: var(--text-4xl);
+    }
+    
+    .floating-icons {
+        display: none;
+    }
+    
+    .about-bio {
+        font-size: var(--text-sm);
+    }
+    
+    /* ---- Projects Section ---- */
+    .project-image {
+        height: 150px;
+    }
+    
+    .project-header {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+    
+    .project-links {
+        align-self: flex-start;
+    }
+    
+    .project-description {
+        font-size: var(--text-xs);
+    }
+    
+    /* ---- Skills Section ---- */
+    .skill-category {
+        padding: var(--space-5);
+    }
+    
+    .skill-category-title {
+        font-size: var(--text-base);
+    }
+    
+    .skill-tag {
+        font-size: 10px;
+    }
+    
+    /* ---- Timeline Section ---- */
+    .timeline-content {
+        padding: var(--space-4);
+    }
+    
+    .timeline-role {
+        font-size: var(--text-base);
+    }
+    
+    .timeline-company {
+        font-size: var(--text-sm);
+    }
+    
+    .timeline-date {
+        font-size: var(--text-xs);
+    }
+    
+    .timeline-description li {
+        font-size: var(--text-xs);
+        padding-left: var(--space-4);
+    }
+    
+    /* ---- Blog Section ---- */
+    .blog-excerpt {
+        font-size: var(--text-xs);
+    }
+    
+    /* ---- Contact Section ---- */
+    .contact-subtitle {
+        font-size: var(--text-xl);
+    }
+    
+    .contact-text p {
+        font-size: var(--text-sm);
+    }
+    
+    .contact-form {
+        padding: var(--space-5);
+    }
+    
+    .form-input {
+        padding: var(--space-3);
+        font-size: var(--text-sm);
+    }
+    
+    /* ---- Footer ---- */
+    .footer {
+        padding: var(--space-6) 0;
+    }
+    
+    .footer-text {
+        font-size: var(--text-xs);
+    }
+    
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: var(--space-4);
+        right: var(--space-4);
+    }
+}
+
+/* ============================================
+   8. EXTRA SMALL PHONES (375px and below)
+   ============================================ */
+@media screen and (max-width: 375px) {
+    :root {
+        --container-padding: 0.75rem;
+    }
+    
+    /* ---- Hero Section ---- */
+    .hero-name {
+        font-size: 1.75rem;
+    }
+    
+    .hero-tagline {
+        font-size: var(--text-xs);
+    }
+    
+    /* ---- About Section ---- */
+    .about-avatar {
+        width: 120px;
+        height: 120px;
+    }
+    
+    /* ---- Projects Section ---- */
+    .projects-grid {
+        gap: var(--space-5);
+    }
+    
+    .project-content {
+        padding: var(--space-4);
+    }
+    
+    .tech-tag {
+        font-size: 9px;
+    }
+    
+    /* ---- Skills Section ---- */
+    .skill-tags {
+        gap: var(--space-1);
+    }
+    
+    .skill-tag {
+        font-size: 9px;
+        padding: 4px 8px;
+    }
+    
+    /* ---- Form ---- */
+    .form-label {
+        font-size: var(--text-xs);
+    }
+    
+    .form-input {
+        padding: 10px 12px;
+    }
+}
+
+/* ============================================
+   9. HEIGHT-BASED QUERIES
+   ============================================ */
+
+/* Short screens - Laptop/Desktop with limited height */
+@media screen and (max-height: 700px) and (min-width: 769px) {
+    .hero {
+        min-height: 100vh;
+        padding-top: calc(var(--navbar-height) + var(--space-4));
+        padding-bottom: var(--space-4);
+    }
+    
+    .hero-content {
+        transform: scale(0.95);
+        transform-origin: center left;
+    }
+    
+    .scroll-indicator {
+        bottom: var(--space-4);
+    }
+    
+    .scroll-line {
+        height: 40px;
+    }
+}
+
+/* Very short screens - For landscape mobile */
+@media screen and (max-height: 500px) {
+    .hero {
+        min-height: auto;
+        padding-top: calc(var(--navbar-height) + var(--space-8));
+        padding-bottom: var(--space-8);
+    }
+    
+    .hero-badge {
+        margin-bottom: var(--space-4);
+    }
+    
+    .hero-title {
+        margin-bottom: var(--space-3);
+    }
+    
+    .hero-description {
+        margin-bottom: var(--space-4);
+    }
+    
+    .hero-cta {
+        margin-bottom: var(--space-6);
+    }
+    
+    .scroll-indicator {
+        display: none;
+    }
+    
+    /* Mobile nav adjustments for landscape */
+    .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: auto;
+        min-height: 100vh;
+        padding-top: var(--navbar-height);
+    }
+    
+    .nav-link {
+        font-size: var(--text-base);
+        padding: var(--space-2) var(--space-4);
+    }
+}
+
+/* ============================================
+   10. PRINT STYLES
+   ============================================ */
+@media print {
+    *,
+    *::before,
+    *::after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+    
+    /* Hide non-essential elements */
+    .navbar,
+    .nav-hamburger,
+    #webgl-canvas,
+    .noise-overlay,
+    .hero-blob,
+    .scroll-indicator,
+    .floating-icons,
+    .avatar-glow,
+    .avatar-ring,
+    .section-aurora,
+    .contact-bg,
+    .back-to-top,
+    .hero-cta,
+    .project-links,
+    .social-link,
+    .contact-form,
+    .footer-socials,
+    .blog-card-glow {
+        display: none !important;
+    }
+    
+    /* Reset layouts */
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .section {
+        padding: 20pt 0;
+        page-break-inside: avoid;
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        color: #000 !important;
+    }
+    
+    .hero-name,
+    .gradient-text {
+        background: none !important;
+        -webkit-text-fill-color: #000 !important;
+        color: #000 !important;
+    }
+    
+    /* Grids to single column */
+    .about-grid,
+    .projects-grid,
+    .skills-grid,
+    .blog-grid,
+    .contact-grid {
+        display: block;
+    }
+    
+    /* Cards */
+    .project-card,
+    .skill-category,
+    .blog-card,
+    .timeline-content,
+    .stat-card {
+        border: 1px solid #ccc;
+        margin-bottom: 10pt;
+        padding: 10pt;
+        background: #fff !important;
+    }
+    
+    /* Links */
+    a {
+        text-decoration: underline;
+    }
+    
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 10pt;
+        color: #666;
+    }
+    
+    /* Don't show URL for internal links */
+    a[href^="#"]::after,
+    a[href^="javascript:"]::after {
+        content: "";
+    }
+    
+    /* Page breaks */
+    .hero,
+    .about,
+    .projects,
+    .skills,
+    .experience,
+    .blog,
+    .contact {
+        page-break-before: always;
+    }
+    
+    .hero {
+        page-break-before: avoid;
+    }
+}
+
+/* ============================================
+   ADDITIONAL RESPONSIVE UTILITIES
+   ============================================ */
+
+/* Hide on specific breakpoints */
+@media screen and (max-width: 1024px) {
+    .hide-tablet {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .show-mobile-only {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .show-tablet-only {
+        display: none !important;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Disable hover effects that might cause issues on touch */
+    .project-card:hover {
+        transform: none;
+    }
+    
+    .project-card:hover::before {
+        opacity: 0;
+    }
+    
+    .skill-tag:hover {
+        transform: none;
+    }
+    
+    .timeline-content:hover {
+        transform: none;
+    }
+    
+    .stat-card:hover {
+        transform: none;
+    }
+    
+    .skill-category:hover {
+        transform: none;
+    }
+    
+    /* Make touch targets larger */
+    .social-link,
+    .project-link,
+    .footer-social-link {
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    .nav-link {
+        padding: var(--space-4) var(--space-6);
+    }
+    
+    /* Disable 3D tilt on touch devices */
+    [data-tilt] {
+        transform: none !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --text-secondary: #d0d0d0;
+        --text-tertiary: #a0a0a0;
+        --border-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .btn-primary {
+        border: 2px solid var(--text-primary);
+    }
+    
+    .nav-link::after {
+        height: 3px;
+    }
+    
+    .form-input {
+        border-width: 2px;
+    }
+    
+    .form-input:focus {
+        outline: 3px solid var(--accent-blue);
+        outline-offset: 2px;
+    }
+}
+
+/* Dark mode forced (for system light mode users viewing dark site) */
+@media (prefers-color-scheme: light) {
+    /* Site is already dark, but we can adjust for better readability */
+    :root {
+        --text-secondary: #b0b0c0;
+    }
+}
+
+/* Landscape orientation specific adjustments */
+@media screen and (orientation: landscape) and (max-height: 600px) {
+    .hero {
+        padding-top: calc(var(--navbar-height) + var(--space-4));
+    }
+    
+    .hero-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-8);
+        align-items: center;
+        text-align: left;
+    }
+    
+    .hero-badge,
+    .hero-socials {
+        justify-content: flex-start;
+    }
+    
+    .hero-cta {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    
+    .hero-cta .btn {
+        width: auto;
+    }
+}
+
+/* ============================================
+   END OF RESPONSIVE.CSS
+   ============================================ */
