@@ -130,9 +130,9 @@ Contributions, issues, and feature requests are welcome!
 
 ## 📧 Contact
 
-- **Email**: rahul@example.com
-- **LinkedIn**: [linkedin.com/in/rahulpal](https://linkedin.com/in/rahulpal)
-- **GitHub**: [github.com/rahulpal](https://github.com/rahulpal)
-- **Twitter/X**: [@rahulpal](https://twitter.com/rahulpal)
+- **Email**: goldlion123.rp@gmail.com
+- **LinkedIn**: [linkedin.com/in/rahulpal](https://www.linkedin.com/in/rahul-pal-133a67153/)
+- **GitHub**: [github.com/rahulpal](https://github.com/GoldLion123RP)
+- **Twitter/X**: [@rahulpal](https://x.com/goldlion123RP)
 
 ---
