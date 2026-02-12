@@ -2,7 +2,7 @@
 
 A stunning, bold, and experimental dark-mode portfolio website for a Full-Stack Developer specializing in AI/ML. Features 3D interactive elements, glassmorphism design, and smooth animations.
 
-![Portfolio Preview](https://via.placeholder.com/1200x630/0a0a0f/00d4ff?text=Rahul+Pal+Portfolio)
+![Portfolio Preview](https://goldlion123rp.github.io/rahul-pal-portfolio/)
 
 ## ✨ Features
 
