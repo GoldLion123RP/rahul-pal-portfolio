@@ -424,20 +424,24 @@ async function handleFormSubmit(e) {
 /**
  * Simulate form submission (replace with actual API call)
  */
-function simulateFormSubmission(data) {
-    return new Promise((resolve, reject) => {
-        console.log('Form data:', data);
-        
-        // Simulate network delay
-        setTimeout(() => {
-            // Simulate 90% success rate
-            if (Math.random() > 0.1) {
-                resolve({ success: true });
-            } else {
-                reject(new Error('Random failure for testing'));
-            }
-        }, 1500);
+/**
+ * Submit form to Formspree
+ */
+async function simulateFormSubmission(data) {
+    const response = await fetch('https://formspree.io/f/mzdaedkp', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
     });
+    
+    if (!response.ok) {
+        throw new Error('Form submission failed');
+    }
+    
+    return response.json();
 }
 
 /**
