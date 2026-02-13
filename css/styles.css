@@ -655,6 +655,11 @@ p:last-child {
     transform: translateY(2px);
 }
 
+/* Hide mobile resume button on desktop */
+.nav-resume-mobile {
+    display: none;
+}
+
 /* Hamburger Menu */
 .nav-hamburger {
     display: none;
