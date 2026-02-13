@@ -47,7 +47,7 @@ const TypingConfig = {
         loopCount: Infinity,     // Number of loops (Infinity for endless)
         deleteAfterLast: true,   // Delete after last phrase if not looping
         showCursor: true,        // Show blinking cursor
-        glitchEffect: true,      // Enable occasional glitch effect
+        glitchEffect: false,     // Enable occasional glitch effect [Previosly enabled, now disabled for better readability]
         glitchProbability: 0.05, // Probability of glitch per character
     },
     
