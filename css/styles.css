@@ -588,11 +588,6 @@ p:last-child {
     gap: var(--space-1);
 }
 
-/* Hide mobile resume button on desktop */
-.nav-resume-mobile {
-    display: none;
-}
-
 .nav-link {
     position: relative;
     padding: var(--space-2) var(--space-4);
