@@ -1,0 +1,65 @@
+# ============================================
+# Rahul Pal Portfolio - .gitignore
+# ============================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+.directory
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Personal notes (if you create any)
+notes.txt
+TODO.md
+NOTES.md
+
+# Backup files
+*.bak
+*.backup
+*-old.*
+
+# Temporary files
+*.tmp
+temp/
+tmp/
+
+# Optional: If you add these later
+node_modules/
+package-lock.json
+yarn.lock
+.env
+.env.local
+dist/
+build/
+
+# Hide resume PDF
+documents/Rahul-Pal-Resume.pdf
+
+# ============================================
+# END
+# ============================================
